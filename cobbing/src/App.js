@@ -1,23 +1,24 @@
 import logo from './logo.svg';
 import './App.css';
+// import 'Sortable.js' // Doesn't work...
+// Trying to model on https://sortablejs.github.io/Sortable/
+// But lots of other stuff going on here...
+import Sortable from 'sortablejs';
+
+var example1 = document.getElementById('example1');
+
+// Example 1 - Simple list
+new Sortable(example1, {
+    animation: 150,
+    ghostClass: 'blue-background-class'
+});
+
+
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
     </div>
   );
 }
