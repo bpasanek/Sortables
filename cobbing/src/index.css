@@ -4,6 +4,7 @@ body {
 }
 
 p {
+    padding-left: 20px;
     font: 1.2em "Fira Sans", serif;
 }
 
