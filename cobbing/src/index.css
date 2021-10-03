@@ -1,6 +1,7 @@
 body {
   margin: 0;
   -moz-osx-font-smoothing: grayscale;
+  /* background-color: peachpuff; */
 }
 
 p {
@@ -15,7 +16,6 @@ p {
     padding-top: 5px;
     padding-left: 40px;
     padding-bottom: 5px;
-
 }
 
 code {

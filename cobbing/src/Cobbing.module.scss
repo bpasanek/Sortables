@@ -1,0 +1,17 @@
+.word {
+    font-family: "ChunkLatin", Arial, sans-serif;
+    font-size:1.5em;
+    -webkit-font-smoothing: antialiased;
+    cursor: pointer;
+    width: fit-content
+}
+
+.cobbing {
+    margin-left: 10%;
+    margin-right: auto
+}
+
+@font-face {
+    font-family: "ChunkLatin";
+    src: url("latin/OPTILatin-Wide.otf") format("opentype");
+}
