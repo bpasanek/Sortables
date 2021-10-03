@@ -108,14 +108,17 @@ export function Cobbing() {
   }
 
   return (
-    <ReactSortable 
+    <div className={styles.cobbingBox}>
+      <ReactSortable 
         list={shuffledState} 
         setList={setShuffledState}
         className={styles.cobbing}>
       {shuffledState.map((item) => (
         <div key={item.id} onClick={() => handleClick(item.name)} className={styles.word}>{item.name}</div>
       ))}
-    </ReactSortable>
+      </ReactSortable>
+    </div>
+    
   );
 };
 
