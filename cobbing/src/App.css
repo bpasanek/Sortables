@@ -1,7 +1,12 @@
 .App {
-  padding-top: 2rem;
+  padding: 2rem;
   justify-content: center;
   align-items: center;
+  display: flex;
+}
+
+.tryptich {
+  display: inline-flex;
 }
 
 .App-logo {
