@@ -120,13 +120,13 @@ export function Carpenter() {
         list={shuffledState} 
         setList={setShuffledState}
         className={styles.carpenter}>
-      {shuffledState.map((item) => (
+      {shuffledState.map((item, index) => (
         <div 
           key={item.id} 
           onDragEnd={() => handleDragEnd()} 
           onClick={() => handleClick(item.name)} 
           className={styles.word}
-          // style={{fontSize: '2 rem'}}
+          style={{fontSize: getFontSize(index)}}
         >{item.name}</div>
       ))}
       </ReactSortable>
@@ -137,6 +137,12 @@ export function Carpenter() {
 
 function shuffle(list: any) {
   list.sort(() => Math.random() - 0.5);
+}
+
+function getFontSize(index: number) {
+  const baseFontSize = 1.5;
+  const modifier = (index + 8)/10;
+  return baseFontSize * modifier + 'rem';
 }
 
 export default Carpenter

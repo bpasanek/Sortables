@@ -1,14 +1,16 @@
+$base-font: 1.5rem;
+
 .word {
     font-family: "EBGaramond-Medium", Arial, sans-serif;
-    font-size: 1.5em;
+    // font-size: 1.5em;
     -webkit-font-smoothing: antialiased;
     cursor: pointer;
     width: fit-content
 }
 
 .carpenter {
-    margin: 2rem;
-    padding-top: 2rem;
+    margin: 1rem;
+    padding: 1rem 0;
 }
 
 .carpenterBox {
