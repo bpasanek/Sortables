@@ -1,23 +1,16 @@
 import './App.css';
 import { Cobbing } from './Cobbing';
-// //import 'Sortable.js' // Doesn't work...
-// // Trying to model on https://sortablejs.github.io/Sortable/
-// // But lots of other stuff going on here...
-// // import Sortable from 'sortablejs';
-
-// // var example1 = document.getElementById('example1');
-// // var example1 = <Cobbing/>
-
-// // Example 1 - Simple list
-// // new Sortable(example1, {
-// //     animation: 150,
-// //     ghostClass: 'blue-background-class'
-// // });
+import { Naylor } from './Naylor';
+import { Carpenter } from './Carpenter';
 
 function App() {
   return (
     <div className="App">
-      <Cobbing/>
+      <div className="triptych">
+        <Cobbing/>
+        <Naylor/>
+        <Carpenter/>
+      </div>
     </div>
   );
 }

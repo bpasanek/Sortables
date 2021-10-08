@@ -129,36 +129,3 @@ function shuffle(list: any) {
 }
 
 export default Cobbing
-
-// Old code might reuse later, ignore
-// import styles from './Cobbing.module.scss';
-
-// // const cx = classnames.bind('./Cobbing.module.scss')
-// export function Cobbing(props) {
-//     const words = ["wan", "do", "tree", "fear", "fife", "seeks", "siphon", "eat", "neighing", "den", "elephan'", "twirl"]
-
-//     const listItems = words.map((word, index) => 
-//         <div class={'word' + index} className={styles.sup}>{word}</div>
-//     );
-// const wanAudio = new Audio("./audio/wan.mp3")
-// const doAudio = new Audio("./audio/do.mp3")
-// const treeAudio = new Audio("./audio/tree.mp3")
-// const fearAudio = new Audio("./audio/fear.mp3")
-// const fifeAudio = new Audio("./audio/fife.mp3")
-// const seeksAudio = new Audio("./audio/seeks.mp3")
-// const siphonAudio = new Audio("./audio/siphon.mp3")
-// const eatAudio = new Audio("./audio/eat.mp3")
-// const neighingAudio = new Audio("./audio/neighing.mp3")
-// const denAudio = new Audio("./audio/den.mp3")
-// const elephanAudio = new Audio("./audio/elephan.mp3")
-// const twirlAudio = new Audio("./audio/twirl.mp3")
-
-//     return (
-//         <div id="example1" class="list-group col">
-//             {listItems}
-//         </div>)
-// }
-
-
-
-// // export default Cobbing;
