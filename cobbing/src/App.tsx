@@ -6,7 +6,7 @@ import { Carpenter } from './Carpenter';
 function App() {
   return (
     <div className="App">
-      <div className="tryptich">
+      <div className="triptych">
         <Cobbing/>
         <Naylor/>
         <Carpenter/>
