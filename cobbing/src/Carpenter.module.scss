@@ -1,0 +1,26 @@
+$base-font: 1.5rem;
+
+.word {
+    font-family: "EBGaramond-Medium", Arial, sans-serif;
+    // font-size: 1.5em;
+    -webkit-font-smoothing: antialiased;
+    cursor: pointer;
+    width: fit-content
+}
+
+.carpenter {
+    margin: 1rem;
+    padding: 1rem 0;
+}
+
+.carpenterBox {
+    min-width: 25rem;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(188, 205, 243);
+}
+
+@font-face {
+    font-family: "EBGaramond-Medium";
+    src: url("fonts/EB_Garamond/static/EBGaramond-Medium.ttf") format("truetype");
+}

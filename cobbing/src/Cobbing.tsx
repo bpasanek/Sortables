@@ -48,10 +48,9 @@ export function Cobbing() {
   shuffle(shuffledWordList) // comment out this line if you want to test the poem sorted right away
   const [shuffledState, setShuffledState] = useState<Word[]>(shuffledWordList);
 
-  // When the puzzler clicks a word, if the list is in the correct order,
-  // then the poem plays in sequence. If the list is not in the correct order,
-  // only the word itself plays.
-  function handleClick(name: string) {
+  // When the puzzler lays the last word in the correct order,
+  // the whole poem is spoken in sequence.
+  function handleDragEnd() {
     let inOrder = true;
     wordList.forEach((word, index) => {
       if(word.name !== shuffledState[index].name) {
@@ -65,7 +64,11 @@ export function Cobbing() {
           audio.play();
         }, 750*index);
       });
-    } else {
+    }
+  }
+
+  // When the puzzler clicks a word, the word is spoken
+  function handleClick(name: string) {
       switch(name) {
         case wordList[0].name:
           audioList[0].play();
@@ -104,18 +107,20 @@ export function Cobbing() {
           audioList[11].play();
           break;
       }
-    }
   }
 
   return (
-    <ReactSortable 
+    <div className={styles.cobbingBox}>
+      <ReactSortable 
         list={shuffledState} 
         setList={setShuffledState}
         className={styles.cobbing}>
       {shuffledState.map((item) => (
-        <div key={item.id} onClick={() => handleClick(item.name)} className={styles.word}>{item.name}</div>
+        <div key={item.id} onDragEnd={() => handleDragEnd()} onClick={() => handleClick(item.name)} className={styles.word}>{item.name}</div>
       ))}
-    </ReactSortable>
+      </ReactSortable>
+    </div>
+    
   );
 };
 
@@ -124,36 +129,3 @@ function shuffle(list: any) {
 }
 
 export default Cobbing
-
-// Old code might reuse later, ignore
-// import styles from './Cobbing.module.scss';
-
-// // const cx = classnames.bind('./Cobbing.module.scss')
-// export function Cobbing(props) {
-//     const words = ["wan", "do", "tree", "fear", "fife", "seeks", "siphon", "eat", "neighing", "den", "elephan'", "twirl"]
-
-//     const listItems = words.map((word, index) => 
-//         <div class={'word' + index} className={styles.sup}>{word}</div>
-//     );
-// const wanAudio = new Audio("./audio/wan.mp3")
-// const doAudio = new Audio("./audio/do.mp3")
-// const treeAudio = new Audio("./audio/tree.mp3")
-// const fearAudio = new Audio("./audio/fear.mp3")
-// const fifeAudio = new Audio("./audio/fife.mp3")
-// const seeksAudio = new Audio("./audio/seeks.mp3")
-// const siphonAudio = new Audio("./audio/siphon.mp3")
-// const eatAudio = new Audio("./audio/eat.mp3")
-// const neighingAudio = new Audio("./audio/neighing.mp3")
-// const denAudio = new Audio("./audio/den.mp3")
-// const elephanAudio = new Audio("./audio/elephan.mp3")
-// const twirlAudio = new Audio("./audio/twirl.mp3")
-
-//     return (
-//         <div id="example1" class="list-group col">
-//             {listItems}
-//         </div>)
-// }
-
-
-
-// // export default Cobbing;
