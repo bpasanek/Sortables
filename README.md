@@ -8,7 +8,7 @@ Brad Pasanek, although JavaScript averse, made a first try with help of Puzzle P
 
 ![](https://64.media.tumblr.com/2f8fc825a1b4f6c9b7d387fd9c102ba4/766fcbba7b71212d-2b/s500x750/51d32bedbafe9d1a4e3cfca3488031f992ba7e56.jpg)
 
-*Bibliography*
+#### Bibliography
 
 - J. R. Carpenter, _This is a Picture of the Wind_ (Longbarrow Press, 2020). 
 - Bob Cobbing, _Kob Bok: Selected texts of Bob Cobbing, 1948-1999_ (Buckfastleigh, UK: Etruscan Books, 1999).
