@@ -1,6 +1,6 @@
 ## About this Project
 
-This [Puzzle Poetry](http://puzzlepoesis) project began as an effort to remediate Bob Cobbing's sound poem (shown below) as a React site. 
+This [Puzzle Poetry](http://puzzlepoesis.org) project began as an effort to remediate Bob Cobbing's sound poem (shown below) as a React site. 
 
 Sound and order, sense and nonsense. Here follows a sketch of our initial thinking about the poetic puzzle. A word in the poem might be a sortable tile, and when the main page is first loaded, the tiles will appear out of order. The puzzle requires the aspirant to put the words in the correct order, the order in which they appear in Cobbing's source poem. Each draggable tile is both a sound and word. When an element of the poem is clicked, a sound file plays. If the words are sorted correctly--in effect, if the aspirant re-composes the original poem--a browser event will be triggered and the whole poem will "play", from beginning to end. 
 
