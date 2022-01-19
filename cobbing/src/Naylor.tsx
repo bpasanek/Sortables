@@ -44,8 +44,20 @@ export function Naylor() {
   shuffle(shuffledWordList) // comment out this line if you want to test the poem sorted right away
   const [shuffledState, setShuffledState] = useState<Word[]>(shuffledWordList);
 
+  // The poem rendered in binary
+  const binaryAnswer = [
+    '0','0','0',
+    '0','0','1',
+    '0','1','0',
+    '0','1','1',
+    '1','0','0',
+    '1','0','1',
+    '1','1','0',
+    '1','1','1'
+  ];
+
   // When the puzzler lays the last word in the correct order,
-  // the whole poem is spoken in sequence.
+  // the whole poem is printed out in binary
   function handleDragEnd() {
     let inOrder = true;
     wordList.forEach((word, index) => {
@@ -54,17 +66,19 @@ export function Naylor() {
       }
     })
 
+    // if(inOrder) {
+    //   console.log("Correct!");
+    // }
+
     if(inOrder) {
       console.log("Correct!");
+      return(
+        <div>
+        `{binaryAnswer}` // Figuring out still how to type this translation out on screen
+        </div>
+      );
     }
-
-  //   if(inOrder) {
-  //     audioList.forEach((audio, index) => {
-  //       setTimeout(function() {
-  //         audio.play();
-  //       }, 750*index);
-  //     });
-  //   }
+  
   }
 
   // When the puzzler clicks a word, the word is spoken

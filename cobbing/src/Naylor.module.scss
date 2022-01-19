@@ -1,8 +1,16 @@
+// Borrowing from https://css-tricks.com/old-timey-terminal-styling/
+// Note, can't figure out how to get repeating linear gradient *over* the font (css tricks uses an ::after declaration)
+
+// Also interested in this font: https://fonts.google.com/specimen/VT323#standard-styles
+
 .word {
-    font-family: "CourierPrime-Regular", Arial, sans-serif;
-    font-size:1.5em;
-    -webkit-font-smoothing: antialiased;
-    cursor: pointer;
+    font-family: "VT323", Courier;
+    //color: green; // green on black as more retro?
+    color: rgb(191,191,189);
+    text-shadow: 0 0 5px #C8C8C8;
+    font-size:1.6em;
+  -webkit-font-smoothing: antialiased;
+    cursor: grab;
     width: fit-content
 }
 
@@ -15,10 +23,35 @@
     min-width: 25rem;
     display: flex;
     justify-content: center;
-    background-color: rgb(219, 219, 219);
+    background-color: black;
+    background-image: radial-gradient(
+        rgba(0, 120, 0, 0.75), black 100%
+      );
 }
 
+// Not sure how to drop these lines over without putting them over the whole page, which ruins the triptych. 
+//.naylorBox::after {
+//  content: "";
+//  position: absolute;
+//  top: 0;
+//  left: 0;
+//  width: 100vw;
+//  height: 100vh;
+//  background: repeating-linear-gradient(
+//    0deg,
+//    rgba(black, 0.15),
+//    rgba(black, 0.15) 1px,
+//    transparent 1px,
+//    transparent 2px
+//  );
+//}
+
 @font-face {
-    font-family: "CourierPrime-Regular";
-    src: url("fonts/Courier_Prime/CourierPrime-Regular.ttf") format("truetype");
+    font-family: "VT323";
+    src: url("fonts/VT323/VT323-Regular.ttf") format("truetype");
 }
+
+//@font-face {
+//    font-family: "CourierPrime-Regular";
+//    src: url("fonts/Courier_Prime/CourierPrime-Regular.ttf") format("truetype");
+//}
