@@ -11,21 +11,8 @@ interface Word {
 
 export function Naylor() {
 
-  // // Audio files generated using https://ttsmp3.com/
-  // // Substituted phonetics for some words not easily understood by the translator
-  // const audioList = [
-  //   new Audio("./audio/wan.mp3"),
-  //   new Audio("./audio/do.mp3"),
-  //   new Audio("./audio/tree.mp3"),
-  //   new Audio("./audio/fear.mp3"),
-  //   new Audio("./audio/fife.mp3"),
-  //   new Audio("./audio/seeks.mp3"),
-  //   new Audio("./audio/siphon.mp3"), // 'sifen'
-  //   new Audio("./audio/eat.mp3"),
-  //   new Audio("./audio/neighing.mp3"),
-  //   new Audio("./audio/den.mp3"),
-  //   new Audio("./audio/elephan.mp3"), // 'ellafan'
-  //   new Audio("./audio/twirl.mp3")]
+  // state for whether to display poem as binary (i.e. whether the user has solved the puzzle)
+  const [binaryState, setBinaryState] = useState(false);
 
   // Words courtesy of Mike Naylor: https://hubski.com/pub/137786
   const wordList = [
@@ -41,8 +28,23 @@ export function Naylor() {
 
   // The shuffled wordList for the initial render
   const shuffledWordList = wordList.map(w => w);
-  shuffle(shuffledWordList) // comment out this line if you want to test the poem sorted right away
+  // shuffle(shuffledWordList) // comment out this line if you want to test the poem sorted right away
   const [shuffledState, setShuffledState] = useState<Word[]>(shuffledWordList);
+
+  // a (possibly temporary) list of the "words" in binary
+  const binaryList = [
+    { id: 'word1', name: "0 0 0", chosen: false, selected: false },
+    { id: 'word2', name: "0 0 1", chosen: false, selected: false  },
+    { id: 'word3', name: "0 1 0", chosen: false, selected: false  },
+    { id: 'word4', name: "0 1 1", chosen: false, selected: false  },
+    { id: 'word5', name: "1 0 0", chosen: false, selected: false  },
+    { id: 'word6', name: "1 0 1", chosen: false, selected: false  },
+    { id: 'word7', name: "1 1 0", chosen: false, selected: false  },
+    { id: 'word8', name: "1 1 1", chosen: false, selected: false  }
+  ]
+
+  // state for the above binary list
+  const [binaryListState, setBinaryListState] = useState<Word[]>(binaryList);
 
   // The poem rendered in binary
   const binaryAnswer = [
@@ -66,74 +68,43 @@ export function Naylor() {
       }
     })
 
+    setBinaryState(inOrder);
+
     // if(inOrder) {
     //   console.log("Correct!");
     // }
 
-    if(inOrder) {
-      console.log("Correct!");
-      for(var i=0; i<binaryAnswer.length; i++){
-        console.log(binaryAnswer[i])
-      }
-      return(
-        <div>
-        `{binaryAnswer}` // Figuring out still how to type this translation out on screen
-        </div>
-      );
-    }
+    // if(inOrder) {
+      // console.log("Correct!");
+      // for(var i=0; i<binaryAnswer.length; i++){
+      //   console.log(binaryAnswer[i])
+      // }
+      // return(
+      //   <div>
+      //   `{binaryAnswer}` // Figuring out still how to type this translation out on screen
+      //   </div>
+      // );
+    // }
   
   }
 
-  // When the puzzler clicks a word, the word is spoken
-  function handleClick(name: string) {
-  //     switch(name) {
-  //       case wordList[0].name:
-  //         audioList[0].play();
-  //         break;
-  //       case wordList[1].name:
-  //         audioList[1].play();
-  //         break;
-  //       case wordList[2].name:
-  //         audioList[2].play();
-  //         break;
-  //       case wordList[3].name:
-  //         audioList[3].play();
-  //         break;
-  //       case wordList[4].name:
-  //         audioList[4].play();
-  //         break;
-  //       case wordList[5].name:
-  //         audioList[5].play();
-  //         break;
-  //       case wordList[6].name:
-  //         audioList[6].play();
-  //         break;
-  //       case wordList[7].name:
-  //         audioList[7].play();
-  //         break;
-  //       case wordList[8].name:
-  //         audioList[8].play();
-  //         break;
-  //       case wordList[9].name:
-  //         audioList[9].play();
-  //         break;
-  //       case wordList[10].name:
-  //         audioList[10].play();
-  //         break;
-  //       case wordList[11].name:
-  //         audioList[11].play();
-  //         break;
-  //     }
-  }
-
-  return (
+  return (binaryState ? <div className={styles.naylorBox}>
+     <ReactSortable 
+        list={binaryListState} 
+        setList={setBinaryListState}
+        className={styles.naylor}>
+      {binaryListState.map((item) => (
+        <div key={item.id} onDragEnd={() => handleDragEnd()} className={styles.word}>{item.name}</div>
+      ))}
+      </ReactSortable>
+  </div> :
     <div className={styles.naylorBox}>
       <ReactSortable 
         list={shuffledState} 
         setList={setShuffledState}
         className={styles.naylor}>
       {shuffledState.map((item) => (
-        <div key={item.id} onDragEnd={() => handleDragEnd()} onClick={() => handleClick(item.name)} className={styles.word}>{item.name}</div>
+        <div key={item.id} onDragEnd={() => handleDragEnd()} className={styles.word}>{item.name}</div>
       ))}
       </ReactSortable>
     </div>
