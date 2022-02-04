@@ -72,6 +72,9 @@ export function Naylor() {
 
     if(inOrder) {
       console.log("Correct!");
+      for(var i=0; i<binaryAnswer.length; i++){
+        console.log(binaryAnswer[i])
+      }
       return(
         <div>
         `{binaryAnswer}` // Figuring out still how to type this translation out on screen
