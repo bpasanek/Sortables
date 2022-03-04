@@ -6,6 +6,9 @@ Sound and order, sense and nonsense. Here follows a sketch of our initial thinki
 
 Brad Pasanek, although JavaScript averse, made a first try with help of Puzzle Poetry members Michelle Lovering and Aaron Thompson. Brenna Courtney joined the stalled coding effort at the beginning of the 2020 school year got the code running. Her effort included adding two new poems to this collection of "sortable" poems: Mike Naylor's "Run, Hero, Run!" and a page from J.R. Carpenter's _This is a Picture of the Wind_. 
 
+
+Brad Pasanek, Colin Buyck, and Brenna are now rebuilding the site as a single stop for trying out a variety of "sortable" poem puzzles, including a new one based on Roger McGough's "Behemoth".
+
 ![](https://64.media.tumblr.com/2f8fc825a1b4f6c9b7d387fd9c102ba4/766fcbba7b71212d-2b/s500x750/51d32bedbafe9d1a4e3cfca3488031f992ba7e56.jpg)
 
 #### Bibliography
